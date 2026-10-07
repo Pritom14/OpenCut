@@ -5,12 +5,15 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { RiGithubLine, RiTwitterXLine } from "react-icons/ri";
 import { getStars } from "@/lib/fetch-github-stars";
+import { logger } from "@/lib/logger";
 import Image from "next/image";
 
 export function Footer() {
   const [star, setStar] = useState<string>();
 
   useEffect(() => {
+    logger.info("Footer component rendered");
+
     const fetchStars = async () => {
       try {
         const data = await getStars();
