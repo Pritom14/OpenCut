@@ -1,0 +1,9 @@
+// Minimal logging utility
+
+const PREFIX = "[OpenCut]";
+
+export const logger = {
+  info: (...args: unknown[]) => console.info(PREFIX, ...args),
+  warn: (...args: unknown[]) => console.warn(PREFIX, ...args),
+  error: (...args: unknown[]) => console.error(PREFIX, ...args),
+};
